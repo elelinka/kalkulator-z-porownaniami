@@ -4,19 +4,16 @@ import java.util.Scanner;
 
 public class Calculator {
 
-    public String isGreater(int[] tab) {
-        int sum = sum(tab[0], tab[1]);
-        return tab[0] > tab[1] ? "Pierwsza liczba jest wieksza. Suma liczb: " + tab[0] + " oraz " + tab[1] + " jest rowna: " + sum : "Pierwsza liczba nie jest wieksza od drugiej";
-    }
-
-    public String isLeast(int[] tab) {
-        int multiply = multiply(tab[0], tab[1]);
-        return tab[0] < tab[1] ? "Pierwsza liczba jest mniejsza. Iloczyn liczb: " + tab[0] + " oraz " + tab[1] + " jest rowny: " + multiply : "Pierwsza liczba nie jest mniejsza od drugiej";
-    }
-
-    public String isEqual(int[] tab) {
-        int power = power(tab[0]);
-        return tab[0] == tab[1] ? "Wprowadzone liczby: " + tab[0] + " oraz " + tab[1] + " sa rowne: " + power : "Liczby sa rozne";
+    public String calcNumbers(int[] tab) {
+        if (tab[0] > tab[1]) {
+            return "Suma liczb " + tab[0] + " oraz " + tab[1] + " jest rowna: " + sum(tab[0], tab[1]);
+        } else if (tab[0] < tab[1]) {
+            return "Iloczyn liczb: " + tab[0] + " oraz " + tab[1] + " jest rowny: " + multiply(tab[0], tab[1]);
+        } else if (tab[0] == tab[1]) {
+            return "Wprowadzone liczby: " + tab[0] + " oraz " + tab[1] + " sa rowne: " + power(tab[0]);
+        } else {
+            return "Probuj dalej";
+        }
     }
 
     public int[] getNumber() {
